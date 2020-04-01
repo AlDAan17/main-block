@@ -1,3 +1,13 @@
+const btnText = document.getElementById("swiper-showmore");
+const btnImg = document.querySelector(".swiper-more-button");
+const btnMoreLogos = document.querySelector("#btn-more-logos");
+const slide = document.getElementsByClassName("logos");
+
+const slideTech = document.getElementsByClassName("slide-technics");
+const btnMoreTech = document.querySelector("#btn-more-technics");
+const btnTextTech = document.getElementById("swiper-showmore-tech");
+const btnImgTech = document.getElementById("btn-img-tech");
+
 if (document.body.clientWidth < 768) {
     let mySwiper_test = new Swiper('.swiper-container', {
         slidesPerView: 'auto',
@@ -5,7 +15,6 @@ if (document.body.clientWidth < 768) {
             el: '.swiper-pagination'
         }
     });
-    //В чем здесь ошибка?
     let test = new Swiper('.swiper-container-technics',{
         slidesPerView: 'auto',
         pagination: {
@@ -14,39 +23,29 @@ if (document.body.clientWidth < 768) {
     });
 }
 
-
-// function readMore(){
-//     let btn = document.getElementsByClassName("content__about__more");
-//     let dots = document.getElementById("dots");
-//     let dots = document.getElementById("dots");
-// }
-
-// const burger = document.querySelector('.burger');
-// const navbar = document.querySelector('.navbar');
-// const navbarActive = document.querySelector('.navbar--active');
-// const content = document.querySelector('.content');
-// const header = document.querySelector('header');
-// const closeIcon = document.querySelector('navbar__content-header-close');
-//
-// burger.addEventListener('click', () => {
-//    navbar.classList.add('navbar--active');
-//    content.classList.add('content--active');
-//    header.classList.add('header--active');
-// });
-//
-// closeIcon.forEach(function (e) {
-//     e.onclick = test;
-// });
-// function test() {
-//     console.log(111);
-// }
-
-// if(navbar.classList.contains('navbar--active')) {
-
-    // closeIcon.addEventListener('click', () => {
-    //     navbar.classList.remove('navbar--active');
-    //     // content.classList.remove('content--active');
-    //     // header.classList.remove('header--active');
-    // });
-
-// }
+btnMoreLogos.addEventListener('click', function () {
+    for (let i = 0; i < slide.length; i++){
+        if(slide[i].classList.contains('slide-open')){
+            slide[i].classList.remove('slide-open');
+            btnText.textContent = "Показать все";
+            btnImg.style.transform = "rotate(0deg)";
+        }else{
+            slide[i].classList.add('slide-open');
+            btnText.textContent = "Скрыть";
+            btnImg.style.transform = "rotate(180deg)";
+        }
+    }
+});
+btnMoreTech.addEventListener('click', function () {
+    for (let i = 0; i < slide.length; i++){
+        if(slideTech[i].classList.contains('slide-open')){
+            slideTech[i].classList.remove('slide-open');
+            btnTextTech.textContent = "Показать все";
+            btnImgTech.style.transform = "rotate(0deg)";
+        }else{
+            slideTech[i].classList.add('slide-open');
+            btnTextTech.textContent = "Скрыть";
+            btnImgTech.style.transform = "rotate(180deg)";
+        }
+    }
+});

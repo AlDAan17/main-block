@@ -499,6 +499,7 @@ ul {
 
     .swiper-container{
         display: block;
+        position: relative;
     }
 
     .swiper-header {
@@ -512,34 +513,25 @@ ul {
         background: linear-gradient(270deg, #F8F8F8 0%, #FFFFFF 98.61%);
     }
 
-    .swiper-wrapper{
-        background: #F2F2F2;
-    }
-
     .swiper-slide{
-        background: #F2F2F2;
-        height: 154px;
-        /*width: 80% !important;*/
+        height: 140px;
         width: auto !important;
     }
 
-    .swiper-slide:nth-child(10),
-    .swiper-slide:nth-child(11){
-        display: none;
+    .swiper-pagination-bullet{
+        background: #B5B6BC;
+        width: 12px;
+        height: 12px;
     }
 
-    .swiper-pagination-bullet:nth-child(10),
-    .swiper-pagination-bullet:nth-child(11){
-        display: none;
-    }
-
-    .swiper-item{
+    /*.swiper-item{*/
+    .item-logos{
         display: flex;
         align-items: center;
         justify-content: space-around;
         height: 72px;
         width: 240px;
-        margin: 16px;
+        margin: 16px 8px 16px 8px;
         background: #FFFFFF;
         border: 1px solid #EAEAEA;
         border-radius: 6px;
@@ -547,7 +539,11 @@ ul {
         cursor: pointer;
     }
 
-    .swiper-item:hover{
+    .item-logos:first-child{
+        margin-left: 16px;
+    }
+
+    .item-logos:hover{
         background: #f9f9f9;
     }
 
@@ -557,13 +553,60 @@ ul {
         padding-right: 16px;
     }
 
-    .swiper-logo-special{
-
-    }
-
     .swiper-more{
         display: none;
     }
+
+    /*Swiper-technics*/
+    
+    .swiper-container-technics{
+        position: relative;
+    }
+
+    .item-technics{
+        display: flex;
+        flex-wrap: wrap;
+        height: 160px;
+        margin: 16px 8px 16px 8px;
+        background: #fff;
+        border: 1px solid #EAEAEA;
+        border-radius: 6px;
+        transition: .2s background linear;
+        cursor: pointer;
+    }
+
+    .item-technics:first-child{
+        margin-left: 16px;
+    }
+
+    .slide-technics{
+        height: 228px;
+    }
+
+    .swiper-technics__header{
+        padding-left: 16px;
+        padding-top: 16px;
+        font-size: 16px;
+        line-height: 24px;
+        letter-spacing: -0.2px;
+        font-weight: 600;
+        color: #1B1C21;
+    }
+
+    .button-technics{
+        align-self:flex-end;
+        padding-right: 16px;
+        padding-bottom: 16px;
+    }
+
+    /*.swiper-wrapper:nth-child(2){*/
+    /*    !*height: 160px;*!*/
+    /*}*/
+
+    /*.swiper-technics__header{*/
+    /*    !*width: 100%;*!*/
+    /*    !*padding: 16px 88px 64px 16px;*!*/
+    /*}*/
 
 }
 
@@ -684,6 +727,7 @@ ul {
         line-height: 24px;
         letter-spacing: -0.2px;
         color: #1B1C21;
+        margin-top: 8px;
     }
 
     .slide-open{
@@ -692,6 +736,12 @@ ul {
 
     .swiper-more-button{
         margin: auto 10px auto 32px;
+    }
+
+    .slide-technics:nth-child(4),
+    .slide-technics:nth-child(5),
+    .slide-technics:nth-child(6){
+        display: none;
     }
 }
 
@@ -786,52 +836,22 @@ ul {
     .swiper-slide {
         width: 25% !important;
     }
-    .swiper-slide:nth-child(1){
-        order:1;
-    }
-
-    .swiper-slide:nth-child(2){
-        order: 2;
-    }
-    .swiper-slide:nth-child(3){
-        order:3;
-    }
-
-    .swiper-slide:nth-child(4){
-        order: 5;
-    }
-    .swiper-slide:nth-child(5){
-        order:6;
-    }
-
-    .swiper-slide:nth-child(6){
-        order: 7;
-    }
-    .swiper-slide:nth-child(7){
-        order:4;
-    }
-
-    .swiper-slide:nth-child(8){
-        order: 8;
-    }
-    .swiper-slide:nth-child(9){
-        order: 9;
-    }
-    .swiper-slide:nth-child(10){
-        order:10;
-    }
-
-    .swiper-slide:nth-child(11){
-        order: 11;
-    }
-
-    .swiper-more{
-        order:12;
-    }
 
     .swiper-slide:nth-child(7),
     .swiper-slide:nth-child(8){
         display: flex;
+    }
+
+    .slide-technics:nth-child(4){
+        display: flex;
+    }
+    .slide-technics:nth-child(7),
+    .slide-technics:nth-child(8){
+        display: none;
+    }
+
+    .slide-technics{
+
     }
 }
 
@@ -856,6 +876,12 @@ ul {
     .content__about-text{
         width: auto;
         padding-right: 40px;
+    }
+}
+
+@media (min-width: 1920px) {
+    .swiper-slide{
+        width: 16% !important;
     }
 }
 
