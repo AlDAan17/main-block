@@ -775,7 +775,8 @@ ul {
     }
 
     .feedback__item{
-        position: relative;
+        position: absolute;
+        right: 0;
         width: 320px;
         background-color: #fff;
         height: 676px;
@@ -1099,7 +1100,9 @@ ul {
     }
 
     .feedback__item-close{
-
+        position: absolute;
+        left: -80px;
+        top: 13px;
     }
 
     .feedback__item-head,
@@ -1133,10 +1136,6 @@ ul {
 
     .navbar{
         display: flex;
-    }
-
-    .navbar__content-header-close{
-        display: none;
     }
 
     .navbar__content-header{
