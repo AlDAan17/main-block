@@ -11,10 +11,16 @@ const btnImgTech = document.getElementById("btn-img-tech");
 // burger
 const burger = document.querySelector('.burger');
 const navbar = document.querySelector('.navbar');
-const content = document.querySelector('.content');
 const header = document.querySelector('header');
 const closeIcon = document.querySelector('.navbar__content-header-close');
-
+//more-text
+const textMore = document.querySelector('.content__about-text');
+const dots = document.querySelector('#dots');
+const readMore = document.querySelector('.content__about-more');
+//feedback
+const feedback = document.querySelector(".feedback");
+const feedbackClose = document.querySelector('.feedback__item-close');
+const makeOrder = document.getElementsByClassName("prices-button");
 if (document.body.clientWidth < 768) {
     let mySwiper_test = new Swiper('.swiper-container-logo', {
         slidesPerView: 'auto',
@@ -65,12 +71,38 @@ btnMoreTech.addEventListener('click', function () {
 
 burger.addEventListener('click', () => {
     navbar.classList.add('navbar--active');
-    content.classList.add('content--active');
-    header.classList.add('header--active');
+    header.style.display = 'none';
+    // content.classList.add('content--active');
+    // header.classList.add('header--active');
 });
 
 closeIcon.addEventListener('click', () => {
     navbar.classList.remove('navbar--active');
-    content.classList.remove('content--active');
-    header.classList.remove('header--active');
+    header.style.display = 'flex';
+    // content.classList.remove('content--active');
+    // header.classList.remove('header--active');
+});
+
+readMore.addEventListener('click', () => {
+    if(textMore.style.width !== 'auto'){
+        textMore.style.width = 'auto';
+        textMore.style.height = '400px';
+        btnImgTech.style.transform = "rotate(180deg)";
+        readMore.textContent = "Скрыть";
+    }
+    else{
+        textMore.style.width = '490px';
+        textMore.style.height = '160px';
+        readMore.textContent = "Читать далее";
+        btnImg.style.transform = "rotate(0deg)";
+    }
+});
+for (let i = 0; i < makeOrder.length; i++) {
+    makeOrder[i].addEventListener('click', () => {
+        feedback.style.display = 'block';
+    });
+}
+
+feedbackClose.addEventListener('click', () => {
+    feedback.style.display = 'none';
 });
