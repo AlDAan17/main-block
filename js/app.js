@@ -1,5 +1,6 @@
 // slide logo
 const btnText = document.getElementById("swiper-showmore");
+const btnImgLogos = document.getElementById("btn-img-logos");
 const btnImg = document.querySelector(".swiper-more-button");
 const btnMoreLogos = document.querySelector("#btn-more-logos");
 const slide = document.getElementsByClassName("logos");
@@ -16,16 +17,18 @@ const header = document.querySelector('header');
 const closeIcon = document.querySelector('.navbar__content-header-close');
 const content = document.querySelector('.content');
 const headerActive = document.querySelector('.header__active');
-//more-text
+//readMore
 const textMore = document.querySelector('.content__about-text');
 const dots = document.querySelector('#dots');
+const readMoreImg = document.querySelector('#readMoreImg');
 const readMore = document.querySelector('.content__about-more');
 const readImg = document.querySelector('.content__about-img');
 //feedback
 const feedback = document.querySelector(".feedback");
 const feedbackClose = document.querySelector('.feedback__item-close');
-const linkSettings = document.querySelector('.link__settings');
+const linkSettings = document.querySelectorAll('.link__settings');
 const makeOrder = document.getElementsByClassName("prices-button");
+const descriptionLink = document.querySelector("descriptionLink");
 //orderCall
 const linkSearch = document.querySelector('.link__search');
 const orderCall = document.querySelector(".orderCall");
@@ -59,11 +62,11 @@ btnMoreLogos.addEventListener('click', function () {
         if(slide[i].classList.contains('slide-open')){
             slide[i].classList.remove('slide-open');
             btnText.textContent = "Показать все";
-            btnImg.style.transform = "rotate(0deg)";
+            btnImgLogos.style.transform = "rotate(0deg)";
         }else{
             slide[i].classList.add('slide-open');
             btnText.textContent = "Скрыть";
-            btnImg.style.transform = "rotate(180deg)";
+            btnImgLogos.style.transform = "rotate(180deg)";
         }
     }
 });
@@ -97,7 +100,7 @@ readMore.addEventListener('click', () => {
     if(textMore.style.width !== 'auto'){
         textMore.style.width = 'auto';
         textMore.style.height = 'auto';
-        btnImg.style.transform = "rotate(180deg)";
+        readMoreImg.style.transform = "rotate(180deg)";
         readMore.textContent = "Скрыть";
         readImg.style.height = '300px';
         dots.style.display = 'none';
@@ -106,7 +109,7 @@ readMore.addEventListener('click', () => {
         textMore.style.width = 'inherit';
         textMore.style.height = '160px';
         readMore.textContent = "Читать далее";
-        btnImg.style.transform = "rotate(0deg)";
+        readMoreImg.style.transform = "rotate(0deg)";
         readImg.style.height = 'auto';
         dots.style.display = 'inline-block';
     }
@@ -122,11 +125,13 @@ feedbackClose.addEventListener('click', () => {
     feedback.style.display = 'none';
     content.style.position = 'unset';
 });
-linkSettings.addEventListener('click', () => {
-    feedback.style.display = 'block';
-    content.style.position = 'fixed';
-});
-
+for(let i = 0; i < linkSettings.length; i++) {
+    linkSettings[i].addEventListener('click', () => {
+        feedback.style.display = 'block';
+        content.style.position = 'fixed';
+    });
+}
+//close modal window clicked on the outside
 window.onclick = function (e) {
     if(e.target === feedback){
         feedback.style.display = "none";
@@ -153,7 +158,8 @@ orderCallClose.addEventListener('click', () =>{
     orderCall.style.display = 'none';
     content.style.position = 'unset';
 });
-linkCall.addEventListener('click', () =>{
+
+linkCall.addEventListener('click', () => {
     orderCall.style.display = 'block';
     content.style.position = 'fixed';
     navbar.classList.remove('navbar--active');
