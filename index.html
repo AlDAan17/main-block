@@ -53,7 +53,7 @@
     <section class="navbar">
         <div class="navbar__content">
             <div class="navbar__content-header">
-                <button class="navbar__content-header-close">
+                <button class="nav_close navbar__content-header-close">
                     <img src="./images/close.svg" alt="close" class="navbar__content-header-close-icon">
                 </button>
                 <a href="#" class="navbar__content-header-logo">
@@ -408,6 +408,23 @@
                     <button id="feedback-btn" type="submit" class="prices-button feedback__item-btn">Отправить
                         <img src="./images/feedback/feedback.svg" alt="">
                     </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div class="orderCall">
+            <div class="orderCall__item">
+                <button class="navbar__content-header-close feedback__item-close orderCall__item-close">
+                    <img src="./images/close.svg" alt="close" class="navbar__content-header-close-icon">
+                </button>
+                <div class="content__header-title orderCall__item-head">Заказать звонок</div>
+                <form action="index.html" method="get">
+                    <input class="orderCall__item-input" type="tel" placeholder="Телефон" required>
+                    <div class="orderCall__item-description">Нажимая “отправить”, вы даете согласие на обработку персональных данных и соглашаетесь с нашей политикой конфиденциальности
+                        <button id="orderCall-btn" type="submit" class="prices-button orderCall__item-btn">Отправить
+                            <img src="./images/feedback/feedback.svg" alt="">
+                        </button>
                     </div>
                 </form>
             </div>

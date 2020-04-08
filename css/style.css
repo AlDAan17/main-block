@@ -33,6 +33,10 @@ ul {
     margin: 0;
 }
 
+.header__active{
+    display: flex;
+}
+
 .content{
     background-color: #F8F8F8;
 }
@@ -85,7 +89,7 @@ ul {
         background-color: #fff;
         position: absolute;
         left: 0;
-        z-index: 1;
+        z-index: 0;
         border-radius: 1px;
     }
 
@@ -493,7 +497,9 @@ ul {
         top: 0;
         box-shadow: 15px 0 8px -3px rgba(50, 50, 50, 0.2);
         width: 100%;
+        height: 150vh; /* для айфона 5*/
         background: rgba(255, 255, 255, 0.7);
+        overflow: scroll;
     }
 
     /* -------- Swiper -------- */
@@ -762,36 +768,41 @@ ul {
 
     /*Modal window Feedback*/
 
-    .feedback{
+    .feedback,
+    .orderCall{
         display:none;
         position: fixed;
         z-index: 10;
         top: 0;
         right: 0;
         width: 100%;
-        height: 100%;
+        height: 100vh;
+        overflow: scroll;
         background: rgba(255, 255, 255, 0.8);
         box-shadow: 16px 0px 52px rgba(14, 24, 80, 0.2), -2px 0px 4px rgba(69, 79, 126, 0.02);
     }
 
-    .feedback__item{
+    .feedback__item,
+    .orderCall__item{
         position: absolute;
         right: 0;
         width: 320px;
         background-color: #fff;
-        height: 676px;
+        height: 130vh;
     }
 
     .feedback__item-close{
         margin: 24px 0 0 16px;
     }
 
-    .feedback__item-head{
+    .feedback__item-head,
+    .orderCall__item-head{
         margin-top: 24px;
         margin-left: 16px;
     }
 
-    .feedback__item-input{
+    .feedback__item-input,
+    .orderCall__item-input{
         margin: 0 16px 16px 16px;
         padding-left: 16px;
         width: 288px;
@@ -803,7 +814,8 @@ ul {
         color: #1B1C21;
     }
 
-    .feedback__item-input::placeholder{
+    .feedback__item-input::placeholder,
+    .orderCall__item-input::placeholder{
         color: #B5B6BC;
         opacity: .7;
     }
@@ -816,7 +828,8 @@ ul {
         margin: 12px 0 0 16px;
     }
 
-    .feedback__item-description{
+    .feedback__item-description,
+    .orderCall__item-description{
         position: relative;
         margin-left: 16px;
         font-size: 14px;
@@ -824,7 +837,8 @@ ul {
         color: #7E7E82;
     }
 
-    .feedback__item-btn{
+    .feedback__item-btn,
+    .orderCall__item-btn{
         position: absolute;
         bottom: -53px;
         width: 132px;
@@ -839,6 +853,10 @@ ul {
     .feedback__item-btn img{
         padding-left: 5px;
     }
+
+    .orderCall{
+        display: none;
+    }
 }
 
 /*  ------- MEDIA min-width: 768px  ------- */
@@ -847,6 +865,10 @@ ul {
     /* ----- Navbar ----- */
     .navbar{
         display: none;
+    }
+
+    .navbar--active{
+        height: 100vh;
     }
 
     /* ----- Burger ----- */
@@ -1094,7 +1116,8 @@ ul {
         padding:32px 24px 26px 40px;
     }
 
-    .feedback__item{
+    .feedback__item,
+    .orderCall__item{
         width: 440px;
         height: 940px;
     }
@@ -1136,6 +1159,10 @@ ul {
 
     .navbar{
         display: flex;
+    }
+
+    .nav_close{
+        display: none;
     }
 
     .navbar__content-header{
@@ -1260,6 +1287,10 @@ ul {
 
     .description__text{
         height: 60px;
+    }
+
+    .description{
+        width: 700px;
     }
 }
 
