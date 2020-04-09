@@ -36,10 +36,13 @@ ul {
 .header__active{
     display: flex;
 }
-
-.content{
-    background-color: #F8F8F8;
+:root{
+    $bgColorGrey: #F8F8F8;
 }
+.content{
+    background-color: var($bgColorGrey);
+}
+
 
 .content__header {
     display: flex;
@@ -183,9 +186,9 @@ ul {
     }
 
     .navbar__content{
-        width: 320px;
+        width: 100vw;
+        max-width: 320px;
         background: #fff;
-        box-shadow: 1px 0 15px rgb(151, 145, 145);
     }
 
     .navbar__content-header{
@@ -489,11 +492,12 @@ ul {
     }
 
     .navAnimation{
-        position: absolute;
+        position: fixed;
         height: 100%;
         animation-name: modalNabvar;
         animation-duration: .2s;
         animation-timing-function: linear;
+        box-shadow: 1px 0 15px rgb(151, 145, 145);
     }
 
     @keyframes modalNabvar {
@@ -721,6 +725,8 @@ ul {
 
     .prices-button-img{
         background-color: inherit;
+        padding-left: 7px;
+        padding-top: 6px;
     }
 
     .description{
@@ -799,7 +805,8 @@ ul {
         bottom: 0;
         height: 100vh;
         overflow: auto;
-        width: 320px;
+        width: 100vw;
+        max-width: 320px;
         background-color: #fff;
         animation-name: modalWindow;
         animation-duration: .2s;
@@ -836,6 +843,7 @@ ul {
         font-size: 14px;
         line-height: 24px;
         color: #1B1C21;
+        outline:none;
     }
 
     .feedback__item-input::placeholder,
@@ -971,10 +979,11 @@ ul {
     .content__about-info{
         margin:0 0 0 24px;
         padding: 0;
+        width: 45%;
     }
 
     .content__about-img{
-        width: 50%;
+        /*width: 50%;*/
         margin-left: auto;
         margin-right: 0;
         padding:0 0 40px 0;
@@ -1160,7 +1169,7 @@ ul {
 
     .feedback__item,
     .orderCall__item{
-        width: 440px;
+        max-width: 440px;
         top: 0;
     }
 
