@@ -344,7 +344,7 @@ ul {
         display: flex;
         padding-left: 24px;
         font-weight: 600;
-        margin-bottom: 80px;
+        padding-bottom: 80px;
     }
 
     .navbar__content-language-ru,
@@ -483,7 +483,7 @@ ul {
         top: 0;
         box-shadow: 15px 0 8px -3px rgba(50, 50, 50, 0.2);
         width: 100%;
-        height: 776px;
+        height: 876px;
         background: rgba(255, 255, 255, 0.7);
         overflow: scroll;
     }
@@ -794,11 +794,13 @@ ul {
 
     .feedback__item,
     .orderCall__item{
-        position: absolute;
+        position: fixed;
         right: 0;
+        bottom: 0;
+        height: 100vh;
+        overflow: auto;
         width: 320px;
         background-color: #fff;
-        height: 130vh;
         animation-name: modalWindow;
         animation-duration: .2s;
         animation-timing-function: linear;
@@ -901,6 +903,11 @@ ul {
 
     .navbar__content-menu-items {
         margin-bottom: 267px;
+    }
+
+    .feedback__item,
+    .orderCall__item{
+        overflow: unset;
     }
 
     .orderCall__item-input{
@@ -1154,7 +1161,7 @@ ul {
     .feedback__item,
     .orderCall__item{
         width: 440px;
-        height: 940px;
+        top: 0;
     }
 
     .feedback__item-close{
