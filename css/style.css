@@ -344,7 +344,7 @@ ul {
         display: flex;
         padding-left: 24px;
         font-weight: 600;
-        /*margin-bottom: 80px;*/
+        margin-bottom: 80px;
     }
 
     .navbar__content-language-ru,
@@ -535,7 +535,7 @@ ul {
         height: 12px;
     }
 
-    .swiper-more-button{
+    .btn-modif{
         position: absolute;
         left: 10px;
         bottom: 8px;
@@ -894,7 +894,9 @@ ul {
     }
 
     .navAnimation{
-        height: 1024px;
+        height: 100vh;
+        overflow: auto;
+        bottom: 0;
     }
 
     .navbar__content-menu-items {
