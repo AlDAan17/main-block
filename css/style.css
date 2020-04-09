@@ -344,7 +344,7 @@ ul {
         display: flex;
         padding-left: 24px;
         font-weight: 600;
-        margin-bottom: 80px;
+        /*margin-bottom: 80px;*/
     }
 
     .navbar__content-language-ru,
@@ -483,13 +483,14 @@ ul {
         top: 0;
         box-shadow: 15px 0 8px -3px rgba(50, 50, 50, 0.2);
         width: 100%;
-        height: 876px;
+        height: 776px;
         background: rgba(255, 255, 255, 0.7);
         overflow: scroll;
     }
 
     .navAnimation{
         position: absolute;
+        height: 100%;
         animation-name: modalNabvar;
         animation-duration: .2s;
         animation-timing-function: linear;
