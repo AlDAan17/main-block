@@ -1351,11 +1351,17 @@ ul {
     }
 }
 
+/*  ------- MEDIA min-width: 1680px  ------- */
+
 @media (min-width: 1680px){
 
     .content__about-text{
         width: auto;
         padding-right: 40px;
+    }
+
+    .content__about-img{
+        width: 45%;
     }
 
     .technics:nth-child(5){
