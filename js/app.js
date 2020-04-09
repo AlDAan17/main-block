@@ -113,7 +113,7 @@ readMore.addEventListener('click', () => {
         textMore.style.height = 'auto';
         readMoreImg.style.transform = "rotate(180deg)";
         readMoreText.textContent = "Скрыть";
-        // readImg.style.height = '300px';
+        readImg.style.height = 'fit-content';
         dots.style.display = 'none';
     }
     else{
@@ -121,7 +121,7 @@ readMore.addEventListener('click', () => {
         textMore.style.height = '160px';
         readMoreText.textContent = "Читать далее";
         readMoreImg.style.transform = "rotate(0deg)";
-        // readImg.style.height = 'auto';
+        readImg.style.height = 'unset';
         dots.style.display = 'inline-block';
     }
 });
