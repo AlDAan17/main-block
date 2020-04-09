@@ -50,7 +50,7 @@ ul {
 }
 
 /*  ------- MEDIA min-width: 320px  ------- */
-@media (min-width: 320px) {
+@media (min-width: 0px) {
 
     .navbar{
         display: flex
@@ -185,7 +185,7 @@ ul {
     .navbar__content{
         width: 320px;
         background: #fff;
-        /*box-shadow: 1px 0 15px rgb(151, 145, 145);*/
+        box-shadow: 1px 0 15px rgb(151, 145, 145);
     }
 
     .navbar__content-header{
@@ -432,7 +432,7 @@ ul {
 
     .content__about-text{
         height: 90px;
-        width: 288px;
+        width: 85%;
         font-weight: 500;
         font-size: 14px;
         line-height: 18px;
@@ -456,20 +456,6 @@ ul {
     .btn-modif{
         margin: 0 7px 0 0;
     }
-
-    /*.content__about-more::before,*/
-    /*.content__about-more::after{*/
-    /*    content: "";*/
-    /*    display: block;*/
-    /*    width: 7px;*/
-    /*    height: 7px;*/
-    /*    border-top: 2px solid #41F6D7;*/
-    /*    border-right: 2px solid #41F6D7;*/
-    /*    position: absolute;*/
-    /*    left: 12px;*/
-    /*    z-index: 1;*/
-    /*    transform: translateY(-50%) rotate(135deg);*/
-    /*}*/
 
     .content__about-more::before{
         top: 30%;
@@ -497,9 +483,25 @@ ul {
         top: 0;
         box-shadow: 15px 0 8px -3px rgba(50, 50, 50, 0.2);
         width: 100%;
-        height: 150vh; /* для айфона 5*/
+        height: 876px;
         background: rgba(255, 255, 255, 0.7);
         overflow: scroll;
+    }
+
+    .navAnimation{
+        position: absolute;
+        animation-name: modalNabvar;
+        animation-duration: .2s;
+        animation-timing-function: linear;
+    }
+
+    @keyframes modalNabvar {
+        0%{
+            left: -320px;
+        }
+        100%{
+            left: 0;
+        }
     }
 
     /* -------- Swiper -------- */
@@ -517,7 +519,8 @@ ul {
         text-transform: uppercase;
         color: #7E7E82;
         font-weight: 400;
-        background: linear-gradient(270deg, #F8F8F8 0%, #FFFFFF 98.61%);
+        border-top: 1px solid #D9FFF5;
+        background: linear-gradient(270deg, #FFFFFF 0%, #F8F8F8 98.61%);
     }
 
     .logos{
@@ -529,6 +532,12 @@ ul {
         background: #B5B6BC;
         width: 12px;
         height: 12px;
+    }
+
+    .swiper-more-button{
+        position: absolute;
+        left: 10px;
+        bottom: 8px;
     }
 
 
@@ -789,6 +798,18 @@ ul {
         width: 320px;
         background-color: #fff;
         height: 130vh;
+        animation-name: modalWindow;
+        animation-duration: .2s;
+        animation-timing-function: linear;
+    }
+
+    @keyframes modalWindow {
+        0%{
+            right: -440px;
+        }
+        100%{
+            right: 0;
+        }
     }
 
     .feedback__item-close{
@@ -871,6 +892,18 @@ ul {
         height: 100vh;
     }
 
+    .navAnimation{
+        height: 1024px;
+    }
+
+    .navbar__content-menu-items {
+        margin-bottom: 267px;
+    }
+
+    .orderCall__item-input{
+        width: 376px;
+    }
+
     /* ----- Burger ----- */
     .burger {
         margin-right: 20px;
@@ -940,7 +973,6 @@ ul {
 
     .content__about-text{
         height: 160px;
-        width: 312px;
         line-height: 20px;
     }
     .content__header-title::before{
@@ -1150,8 +1182,8 @@ ul {
     }
 }
 
-/*  ------- MEDIA min-width: 1120px  ------- */
-@media (min-width: 1120px){
+/*  ------- MEDIA min-width: 1440px  ------- */
+@media (min-width: 1440px){
 
     main{
         display:flex;
@@ -1159,6 +1191,7 @@ ul {
 
     .navbar{
         display: flex;
+        width: 306px;
     }
 
     .nav_close{
@@ -1234,9 +1267,9 @@ ul {
     }
 
     /* ----- content__about ----- */
-    .content__about-text{
-        width: 490px;
-    }
+    /*.content__about-text{*/
+    /*    width: 490px;*/
+    /*}*/
 
     .logo {
         width: 25% !important;
@@ -1256,6 +1289,11 @@ ul {
 }
 
 @media (min-width: 1600px){
+
+    .navbar{
+        width: 320px;
+    }
+
     .logos{
         width: 20% !important;
     }

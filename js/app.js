@@ -14,9 +14,11 @@ const burger = document.querySelector('.burger');
 const navbar = document.querySelector('.navbar');
 const navbarActive = document.querySelector('.navbar--active');
 const header = document.querySelector('header');
+const navbarContent = document.querySelector('.navbar__content');
 const closeIcon = document.querySelector('.navbar__content-header-close');
 const content = document.querySelector('.content');
 const headerActive = document.querySelector('.header__active');
+const readMoreText = document.querySelector('#readMoreText');
 //readMore
 const textMore = document.querySelector('.content__about-text');
 const dots = document.querySelector('#dots');
@@ -87,12 +89,14 @@ btnMoreTech.addEventListener('click', function () {
 burger.addEventListener('click', () => {
     navbar.classList.add('navbar--active');
     header.classList.add('header__active');
+    navbarContent.classList.add('navAnimation');
     content.style.position = 'fixed';
 });
 
 closeIcon.addEventListener('click', () => {
     navbar.classList.remove('navbar--active');
     header.classList.remove('header__active');
+    navbarContent.classList.remove('navAnimation');
     content.style.position = 'unset';
 });
 // readmore
@@ -101,14 +105,14 @@ readMore.addEventListener('click', () => {
         textMore.style.width = 'auto';
         textMore.style.height = 'auto';
         readMoreImg.style.transform = "rotate(180deg)";
-        readMore.textContent = "Скрыть";
+        readMoreText.textContent = "Скрыть";
         readImg.style.height = '300px';
         dots.style.display = 'none';
     }
     else{
-        textMore.style.width = 'inherit';
+        textMore.style.width = '85%';
         textMore.style.height = '160px';
-        readMore.textContent = "Читать далее";
+        readMoreText.textContent = "Читать далее";
         readMoreImg.style.transform = "rotate(0deg)";
         readImg.style.height = 'auto';
         dots.style.display = 'inline-block';
