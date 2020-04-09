@@ -491,16 +491,31 @@ ul {
         overflow: scroll;
     }
 
-    .navAnimation{
+    .Animation__open{
         position: fixed;
         height: 100%;
-        animation-name: modalNabvar;
+        animation-name: modalNavOpen;
         animation-duration: .2s;
         animation-timing-function: linear;
         box-shadow: 1px 0 15px rgb(151, 145, 145);
     }
 
-    @keyframes modalNabvar {
+    .AnimationNavClose{
+        animation-name: modalNavClose;
+        animation-duration: .2s;
+        animation-timing-function: linear;
+    }
+
+    @keyframes modalNavClose {
+        0%{
+            left: 0;
+        }
+        100%{
+            left: -320px;
+        }
+    }
+
+    @keyframes modalNavOpen {
         0%{
             left: -320px;
         }
@@ -889,6 +904,20 @@ ul {
     .orderCall{
         display: none;
     }
+    .AnimationModal__close{
+        animation-name: modalClose;
+        animation-duration: .2s;
+        animation-timing-function: linear;
+    }
+
+    @keyframes modalClose {
+        0%{
+            right: 0;
+        }
+        100%{
+            right: -520px;
+        }
+    }
 }
 
 /*  ------- MEDIA min-width: 768px  ------- */
@@ -907,6 +936,21 @@ ul {
         height: 100vh;
         overflow: auto;
         bottom: 0;
+    }
+
+    .AnimationModal__close{
+        animation-name: modalClose;
+        animation-duration: .2s;
+        animation-timing-function: linear;
+    }
+
+    @keyframes modalClose {
+        0%{
+            right: 0;
+        }
+        100%{
+            right: -520px;
+        }
     }
 
     .navbar__content-menu-items {

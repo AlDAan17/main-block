@@ -27,6 +27,7 @@ const readMore = document.querySelector('.content__about-more');
 const readImg = document.querySelector('.content__about-img');
 //feedback
 const feedback = document.querySelector(".feedback");
+const feedbackItem = document.querySelector(".feedback__item");
 const feedbackClose = document.querySelector('.feedback__item-close');
 const linkSettings = document.querySelectorAll('.link__settings');
 const makeOrder = document.getElementsByClassName("prices-button");
@@ -34,6 +35,7 @@ const descriptionLink = document.querySelector("descriptionLink");
 //orderCall
 const linkSearch = document.querySelector('.link__search');
 const orderCall = document.querySelector(".orderCall");
+const orderCallItem = document.querySelector(".orderCall__item");
 const orderCallClose = document.querySelector('.orderCall__item-close');
 const navbarCall = document.querySelector('.navbar__content-icons-call');
 const linkCall = document.querySelector('.link__call');
@@ -89,15 +91,20 @@ btnMoreTech.addEventListener('click', function () {
 burger.addEventListener('click', () => {
     navbar.classList.add('navbar--active');
     header.classList.add('header__active');
-    navbarContent.classList.add('navAnimation');
+    navbarContent.classList.add('Animation__open');
+    navbarContent.classList.remove('AnimationNavClose');
     content.style.position = 'fixed';
 });
 
 closeIcon.addEventListener('click', () => {
-    navbar.classList.remove('navbar--active');
-    header.classList.remove('header__active');
-    navbarContent.classList.remove('navAnimation');
-    content.style.position = 'unset';
+    navbarContent.classList.add('AnimationNavClose');
+
+    setTimeout(function(){
+        navbar.classList.remove('navbar--active');
+        header.classList.remove('header__active');
+        navbarContent.classList.remove('Animation__open');
+        content.style.position = 'unset';
+    }, 200);
 });
 // readmore
 readMore.addEventListener('click', () => {
@@ -126,8 +133,13 @@ for (let i = 0; i < makeOrder.length; i++) {
     });
 }
 feedbackClose.addEventListener('click', () => {
-    feedback.style.display = 'none';
-    content.style.position = 'unset';
+    feedbackItem.classList.add('AnimationModal__close');
+
+    setTimeout(function(){
+        feedback.style.display = 'none';
+        content.style.position = 'unset';
+        feedbackItem.classList.remove('AnimationModal__close');
+    }, 200);
 });
 for(let i = 0; i < linkSettings.length; i++) {
     linkSettings[i].addEventListener('click', () => {
@@ -138,17 +150,32 @@ for(let i = 0; i < linkSettings.length; i++) {
 //close modal window clicked on the outside
 window.onclick = function (e) {
     if(e.target === feedback){
-        feedback.style.display = "none";
-        content.style.position = "unset";
+        feedbackItem.classList.add('AnimationModal__close');
+
+        setTimeout(function(){
+            feedback.style.display = 'none';
+            content.style.position = 'unset';
+            feedbackItem.classList.remove('AnimationModal__close');
+        }, 200);
     }
     if(e.target === navbar){
-        navbar.classList.remove('navbar--active');
-        header.classList.remove('header__active');
-        content.style.position = "unset";
+        navbarContent.classList.add('AnimationNavClose');
+
+        setTimeout(function(){
+            navbar.classList.remove('navbar--active');
+            header.classList.remove('header__active');
+            navbarContent.classList.remove('Animation__open');
+            content.style.position = 'unset';
+        }, 200);
     }
     if(e.target === orderCall){
-        orderCall.style.display = 'none';
-        content.style.position = 'unset';
+        orderCallItem.classList.add('AnimationModal__close');
+
+        setTimeout(function(){
+            orderCall.style.display = 'none';
+            content.style.position = 'unset';
+            orderCallItem.classList.remove('AnimationModal__close');
+        }, 200);
     }
 };
 //orderCall
@@ -159,8 +186,15 @@ navbarCall.addEventListener('click', () =>{
     header.classList.remove('header__active');
 });
 orderCallClose.addEventListener('click', () =>{
-    orderCall.style.display = 'none';
-    content.style.position = 'unset';
+
+
+    orderCallItem.classList.add('AnimationModal__close');
+
+    setTimeout(function(){
+        orderCall.style.display = 'none';
+        content.style.position = 'unset';
+        orderCallItem.classList.remove('AnimationModal__close');
+    }, 200);
 });
 
 linkCall.addEventListener('click', () => {
