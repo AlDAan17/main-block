@@ -481,7 +481,7 @@ ul {
     /*Burger active classes*/
     .navbar--active{
         display: flex !important;
-        position: absolute;
+        position: fixed;
         z-index: 10;
         top: 0;
         box-shadow: 15px 0 8px -3px rgba(50, 50, 50, 0.2);
@@ -494,6 +494,7 @@ ul {
     .Animation__open{
         position: fixed;
         height: 100%;
+        overflow: scroll;
         animation-name: modalNavOpen;
         animation-duration: .2s;
         animation-timing-function: linear;
